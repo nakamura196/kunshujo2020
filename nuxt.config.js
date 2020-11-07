@@ -235,19 +235,25 @@ export default {
     
     routes() {
 
-      const arr = [jsonData[0]]
+      const arr = jsonData
 
       const pages = []
 
       for (let i = 0; i < arr.length; i++) {
-        const id = arr[i].objectID
+        
+
+        const obj = arr[i]
+
+        const id = obj.objectID
 
         pages.push({
           route: `/item/${id}`,
+          payload : obj
         })
 
         pages.push({
           route: `/en/item/${id}`,
+          payload : obj
         })
       }
 

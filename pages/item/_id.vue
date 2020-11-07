@@ -160,7 +160,7 @@ import axios from 'axios'
 export default {
   async asyncData({ payload, app }) {
     if (payload) {
-      return payload
+      return { result : payload }
     } else {
       const id = app.context.params.id
       const arr = app.context.env.jsonData
@@ -172,7 +172,6 @@ export default {
           break
         }
       }
-      console.log({ result })
       return { result }
     }
   },
