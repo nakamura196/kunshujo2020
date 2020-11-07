@@ -90,6 +90,9 @@
     
     "search_subject_directory" : "Search Subject",
     "piranesi_db" : "『大正新脩大蔵経』底本・校本データベース",
+
+    "reset" : "Reset",
+
     "volume_index" : "Volume Index",
     "related_information" : "Related Information",
     "detailed_information" : "Detailed Information",
@@ -351,5 +354,8 @@
   "contact_information" : "Contact information",
   "updates" : "Updates",
   "members" : "Members",
-  "try_out" : "Try Out"
+  "try_out" : "Try Out",
+  "digital_kunshujo" : "Digital Exhibit \"Kunshujo\"",
+  "Tags" : "Tags",
+  "Label" : "Volume"
   }

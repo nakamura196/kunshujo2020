@@ -87,7 +87,7 @@
         </dd>
       </dl>
 
-      <dl class="row">
+      <dl class="row" v-if="result.tags.length > 0">
         <dt class="col-sm-3 text-muted">
           <b>{{ $t('Tags') }}</b>
         </dt>
@@ -116,7 +116,19 @@
           <b>{{ $t('label') }}</b>
         </dt>
         <dd class="col-sm-9">
-          {{ result._label }}
+          <nuxt-link
+                :to="
+                  localePath({
+                    name: 'search',
+                    query: {
+                      'kunshujo[refinementList][_label][0]': result.label,
+                    },
+                  })
+                "
+              >
+                {{ result.label }}
+              </nuxt-link>
+          
         </dd>
       </dl>
 
@@ -193,7 +205,7 @@ export default {
       return this.$route.params.id
     },
     title() {
-      return this.result._title
+      return this.result.title
     },
   },
 
@@ -202,20 +214,20 @@ export default {
       const url =
         this.baseUrl +
         '/curation/?manifest=' +
-        this.result._manifest +
+        this.result.manifest +
         '&canvas=' +
-        encodeURIComponent(this.result._member)
+        encodeURIComponent(this.result.member)
       return url
     },
 
     getCurationUrl() {
-      const memberId = this.result._member
+      const memberId = this.result.member
       const memberIdSpl = memberId.split('#xywh=')
       const canvasId = memberIdSpl[0]
       const xywh = memberIdSpl[1]
       const url =
         'http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?manifest=' +
-        this.result._manifest +
+        this.result.manifest +
         '&canvas=' +
         encodeURIComponent(canvasId) +
         '&xywh=' +
@@ -248,7 +260,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.result._image,
+          content: this.result.image,
         },
         {
           hid: 'twitter:card',

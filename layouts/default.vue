@@ -69,7 +69,7 @@
             "
             style="color: inherit; text-decoration: inherit"
           >
-            電子展示『捃拾帖』
+            {{$t("digital_kunshujo")}}
           </nuxt-link>
         </v-toolbar-title>
 
@@ -87,11 +87,11 @@
           </template>
 
           <v-list>
-            <v-list-item :to="switchLocalePath('en')">
-              <v-list-item-title>English</v-list-item-title>
-            </v-list-item>
             <v-list-item :to="switchLocalePath('ja')">
               <v-list-item-title>日本語</v-list-item-title>
+            </v-list-item>
+            <v-list-item :to="switchLocalePath('en')">
+              <v-list-item-title>English</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>

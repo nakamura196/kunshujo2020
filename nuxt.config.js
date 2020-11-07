@@ -3,9 +3,9 @@ import colors from 'vuetify/es5/util/colors'
 const environment = process.env.NODE_ENV || 'local'
 const env = require(`./env/${environment}.ts`)
 
-const fs = require('fs')
-const jsonData = JSON.parse(fs.readFileSync('assets/json/algolia.json'))
-env.jsonData = jsonData
+//const fs = require('fs')
+//const jsonData = JSON.parse(fs.readFileSync('assets/json/algolia.json'))
+//env.jsonData = jsonData
 
 // `DEPLOY_ENV` が `GH_PAGES` の場合のみ `router.base = '/<repository-name>/'` を追加する
 const routerBase =
@@ -234,6 +234,9 @@ export default {
     dir: 'docs',
     
     routes() {
+
+      const fs = require('fs')
+      const jsonData = JSON.parse(fs.readFileSync('assets/json/algolia.json'))
 
       const arr = jsonData
 
